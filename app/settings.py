@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-xj_%&072e7@$1bjv8#_^4=zcc1xjxmu*%3%a%2x#5&$=8ujii+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost").split(",")
-
+# ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost").split(",")
+ALLOWED_HOSTS = ['monograficodemo.avantkeel.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
