@@ -25,12 +25,14 @@ Fecha de entrega: **2026/03/29**
 ---
 ## Repositorio
 
+(monografico-tareas)[https://github.com/avantkeel/monograficodemo]
+
 ## Instrucciones para ejecutar projecto
 
 ### 1. clonar el projecto
 
 ```bash
-git clone ###########
+git clone git@github.com:avantkeel/monograficodemo.git
 cd tarea2
 ```
 
@@ -91,3 +93,4 @@ Abrir el navegador en [http://127.0.0.1:8000/](http://127.0.0.1:8000/) para ver 
 
 - Todas las dependencias se manejan dentro del **entorno virtual** (`.venv`).
 - Para instalar dependencias en otra máquina:
+- para colaborar crear un fork de el projecto, hacer commit de los cambios y crear una pull request o hablar con uno de los colaboradores de este projecto.
