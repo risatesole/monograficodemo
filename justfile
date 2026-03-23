@@ -43,3 +43,7 @@ run:
 localdeploy:
   ./.venv/Scripts/python manage.py collectstatic
   ./.venv/Scripts/python manage.py runserver
+
+# collect Static files
+collectstatic:
+  ./.venv/Scripts/python manage.py collectstatic
