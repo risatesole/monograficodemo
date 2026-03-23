@@ -38,3 +38,8 @@ clean:
 run:
   @ echo running app in development mode
   ./.venv/Scripts/python manage.py runserver
+
+# deploy locally
+localdeploy:
+  ./.venv/Scripts/python manage.py collectstatic
+  ./.venv/Scripts/python manage.py runserver
