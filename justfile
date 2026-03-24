@@ -56,3 +56,9 @@ clean:
 checkdbconnection:
     source ./.venv/Scripts/activate
     uv run python manage.py check
+
+
+createadminuser:
+    source ./.venv/Scripts/activate
+    # uv run python manage.py migrate
+    uv run python manage.py createsuperuser
