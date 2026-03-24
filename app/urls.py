@@ -1,10 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from django.shortcuts import render  # Import render instead of HttpResponse
-
-def homePage(request):
-    # This looks into templates/pages/home.html
-    return render(request, 'pages/home.html')
+from views.home import home
 
 def applicationPage(request):
     # If you have an app-specific page, render it here too
@@ -18,7 +15,7 @@ def signInPage(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', homePage),
+    path('', home),
     path('app/', applicationPage),
     path('signup/',signUpPage),
     path('signin/',signInPage)
