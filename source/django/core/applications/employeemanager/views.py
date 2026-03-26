@@ -5,4 +5,4 @@ def employeemanager(request):
     context = {
         "title": "AvantKeel"
     }
-    return render(request, 'employeemanager.html', context)
+    return render(request, 'employeemanager/employeemanager.html', context)
