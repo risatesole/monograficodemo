@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'applications.core',
+    'applications.employeemanager',
     'applications.account',
     'components.core.button.apps.config',
 ]
