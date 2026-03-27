@@ -43,9 +43,11 @@ install:
     source ./.venv/Scripts/activate
     uv pip install -r requirements.txt
 
+# activate environment variable
 activatevenv:
     source ./.venv/Scripts/activate
 
+# this resapy just deactivates uv environment variable but it just runs inside a separate process
 deactivatevenv:
     deactivate
 
@@ -53,14 +55,17 @@ deactivatevenv:
 clean:
     rm -rf .venv
 
+# check connection with database in this case with postgresql
 checkdbconnection:
     source ./.venv/Scripts/activate
     uv run python manage.py check
 
+# Sample resapy to create a django app called appname
 createapp:
     source ./.venv/Scripts/activate
     uv run python manage.py startapp appname ./applications/appname
 
+# creates admin user in django application
 createadminuser:
     source ./.venv/Scripts/activate
     # uv run python manage.py migrate
