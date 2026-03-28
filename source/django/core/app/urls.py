@@ -11,6 +11,8 @@ def applicationPage(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
-    path('app/', employeemanager),
+    # path('app/', employeemanager),
     path('', include('applications.account.urls')),  # handles signup/signin
+    path("app/", include("applications.employeemanager.urls")),
+
 ]

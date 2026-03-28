@@ -1,8 +1,12 @@
 from django.shortcuts import render
+from applications.employeemanager.server.handlers.employeeHandler import employeeHandler
 
-
+# 🔹 UI view (ONLY HTML)
 def employeemanager(request):
-    context = {
+    return render(request, "employeemanager/employeemanager.html", {
         "title": "AvantKeel"
-    }
-    return render(request, 'employeemanager/employeemanager.html', context)
+    })
+
+# 🔹 API view (ONLY JSON)
+def employee_api(request):
+    return employeeHandler(request)
