@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
-from applications.account.handlers.signin import signinHandler
+from applications.account.server.handlers.signin import signinHandler
 
 # todo save tokens in the dbms
 TOKENS = {}
