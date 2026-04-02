@@ -83,25 +83,33 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
+ENVIRONMENT = os.getenv("DJANGO_ENVIRONMENT", "development")
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.getenv('POSTGRESQL_DATABASE_NAME'),
-#         'USER': os.getenv('POSTGRESQL_DATABASE_USER'),
-#         'PASSWORD': os.getenv('POSTGRESQL_DATABASE_PASSWORD'),
-#         'HOST': os.getenv('POSTGRESQL_DATABASE_HOST', '127.0.0.1'),
-#         'PORT': os.getenv('POSTGRESQL_DATABASE_PORT', '5432'),
-#     }
-# }
-
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if ENVIRONMENT == "development":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+
+elif ENVIRONMENT == "production":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv('POSTGRESQL_DATABASE_NAME'),
+            'USER': os.getenv('POSTGRESQL_DATABASE_USER'),
+            'PASSWORD': os.getenv('POSTGRESQL_DATABASE_PASSWORD'),
+            'HOST': os.getenv('POSTGRESQL_DATABASE_HOST', '127.0.0.1'),
+            'PORT': os.getenv('POSTGRESQL_DATABASE_PORT', '5432'),
+        }
+    }
+
+else:
+    raise ValueError(f"Unknown DJANGO_ENVIRONMENT: {ENVIRONMENT}")
+
+
+
 
 
 
