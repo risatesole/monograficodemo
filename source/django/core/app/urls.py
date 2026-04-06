@@ -7,6 +7,12 @@ from applications.employeemanager.views import employeemanager
 from applications.core.views import hello_world
 from server.views import hello_view
 
+# django admin panel customization
+admin.site.site_header = "AvantKeel Monografico Admin Panel"
+admin.site.site_title = "AvantKeel Monografico Admin Panel"
+admin.site.index_title = "Project Administration"
+
+
 def applicationPage(request):
     return render(request, 'pages/app.html')
 
