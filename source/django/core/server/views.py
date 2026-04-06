@@ -6,6 +6,105 @@ from .handler.hello.HelloHandler import HelloHandler
 
 employees = []
 
+def handleSignup(req: Request, res: Response):
+    successResponse = {
+        "success": True,
+        "message": "Account created successfully",
+        "data": {
+            "user": {
+                "id": "f93dfe6a-0eaf-4c01-ab59-6d6745e6945b",
+                "username": "henry",
+                "email": "someone@example.com",
+                "display_name": "someone",
+                "locale": "en-US",
+                "timezone": "America/Santo_Domingo",
+                "email_verified": False,
+                "created_at": "2026-03-14T21:05:22Z"
+            },
+            "session": {
+                "session_id": "sess_7c82fa91",
+                "device": {
+                    "name": "Henry's Laptop",
+                    "type": "desktop"
+                },
+                "created_at": "2026-03-14T21:05:22Z",
+                "tokens": {
+                    "access_token": "access_token",
+                    "refresh_token": "refresh_token",
+                    "expires_in": 3600
+                }
+            }
+        }
+    }
+
+    fieldErrorResponse = {
+        "success": False,
+        "message": "There where an error in one of the fields",
+        "error": {
+            "type": "CONFLICT",
+            "code": "FIELDERROR",
+            "fields": {
+                "username": {
+                    "message": "",
+                    "errorcode": "",
+                    "haserror": False,                    
+                },
+                "firstname": {
+                    "message": "",
+                    "errorcode": "",
+                    "haserror": False
+
+                },
+                "lastname": {
+                    "message": "",
+                    "errorcode": "",
+                    "haserror": False
+                },
+                "email": {
+                    "message": "",
+                    "errorcode": "",
+                    "haserror": False
+                },
+                "password": {
+                    "message": "",
+                    "errorcode": "",
+                    "haserror": False
+                },
+            }
+        }
+    }
+
+    res.json( fieldErrorResponse , status=200)
+
+
+@csrf_exempt
+def signup(request):
+    if request.method == "POST":
+        req = Request(request);
+        res = Response()
+        try:
+            # body = json.loads(request.body)
+            answare = handleSignup(req,res)
+
+            return JsonResponse(res.data,status=res.status)
+
+        except json.JSONDecodeError:
+            return JsonResponse({
+                "error": "Invalid JSON"
+            }, status=400)
+
+
+
+
+
+
+
+
+
+
+
+
+
 @csrf_exempt
 def hello_view(request):
     req = Request(request)
