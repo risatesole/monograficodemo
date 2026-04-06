@@ -83,3 +83,6 @@ createmigration:
 
 showmigrations:
     uv run python manage.py showmigrations
+
+deleteproductiondatabasewarning:
+    uv run python manage.py flush
