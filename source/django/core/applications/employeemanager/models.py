@@ -5,7 +5,7 @@ class Employee(models.Model):
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
     role = models.CharField(max_length=100)
-    email = models.EmailField(unique=True)
+    email = models.EmailField(unique=False)
 
     submitted_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
