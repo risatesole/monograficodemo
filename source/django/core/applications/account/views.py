@@ -34,7 +34,7 @@ def signin(request):
     response = signinHandler(request)
     if response:
             return response
-    return render(request, "signin.html", {"title": "AvantKeel"})
+    return render(request, "signin_ES.html", {"title": "AvantKeel"})
 
 
 @login_required
