@@ -12,3 +12,6 @@ def home(request):
         "title": "AvantKeel"
     }
     return render(request, 'core/home.html', context)
+
+def learnmore(request):
+    return render(request, 'core/about.html')

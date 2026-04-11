@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import render
-from applications.core.views import home
+from applications.core.views import home, learnmore
 from applications.employeemanager.views import teambase
 from applications.core.views import hello_world
 from server.views import hello_view
@@ -27,6 +27,7 @@ urlpatterns = [
 
     # home page
     path('', home),
+    path('about/', learnmore),
     # path('app/', employeemanager),
     
     # custom signin, signout and signup endpoints that use django api
