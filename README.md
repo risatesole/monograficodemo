@@ -8,19 +8,6 @@
 | Miguel Angel Mendez            | 100281535 |
 | Roslyn Cruz                    | AA-7473   |
 
-## Requerimientos de tarea:
-
-Tarea2:
-
-Crear una aplicación web con Django que permita capturar datos de un empleado (id,nombre,salario).
-
-Este aplicativo debe mostrar una página inicial cuando entre, que muestre un listado de empleado almacenados, como se hizo en clases. Pero también debe permitir capturar esos datos.
-
-Por ahora, no tienes guadar nada en la base datos o en memoria. Solo capturar los datos y mostrar un mensaje "Registro almacenado" al usuario.
-
-Para esa captura debes investigar como se usa la etiqueta formulario en html y la acción de aceptar datos en Django. Tambien lo puedes revisar en el pdf llamado "jdjango3 - forms.pdf".
-
-Fecha de entrega: **2026/03/29**
 
 ## deployment
 
