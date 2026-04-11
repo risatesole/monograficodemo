@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import employeemanager
+from .views import teambase, create_team
 
 urlpatterns = [
-    path("", employeemanager, name="employee"),
+    path("", teambase, name="teambase"),
+    path("createteam/", create_team, name="createteam"),
 ]

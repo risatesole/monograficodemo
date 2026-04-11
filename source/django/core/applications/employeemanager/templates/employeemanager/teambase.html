@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TeamBase | Choose Team</title>
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'employeemanager/employeemanager.css' %}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="brand">TeamBase</div>
+
+      <div class="sidebar-title">NAVIGATION</div>
+
+      <div class="list-item active">Teams</div>
+      <div class="list-item">My Activity</div>
+      <div class="list-item">Notifications</div>
+
+      <div class="sidebar-title" style="margin-top: 15px">ACTIONS</div>
+
+      <button class="btn" onclick="openModal()">Create Team</button>
+
+      <!-- USER -->
+      <div class="user-card" onclick="toggleUserMenu()">
+        <div class="avatar">H</div>
+        <div>
+          <div class="user-name">Henry E. Ramirez</div>
+          <div class="user-role">Team Member</div>
+        </div>
+      </div>
+
+      <!-- USER MENU -->
+      <div class="user-menu" id="userMenu">
+        <div class="menu-item">Settings</div>
+        <div class="menu-item danger" onclick="logoutUser()">Logout</div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main">
+      <header>
+        <a href="/" class="logo">TeamBase</a>
+      </header>
+
+      <main class="content-wrapper">
+        <h2>Choose a Team</h2>
+
+        <div class="team-list">
+          <div class="team">
+            <div>
+              Design Team
+              <div class="team-meta">3 members</div>
+            </div>
+            <div class="team-meta">→</div>
+          </div>
+
+          <div class="team">
+            <div>
+              Engineering Team
+              <div class="team-meta">5 members</div>
+            </div>
+            <div class="team-meta">→</div>
+          </div>
+
+          <div class="team">
+            <div>
+              Marketing Team
+              <div class="team-meta">2 members</div>
+            </div>
+            <div class="team-meta">→</div>
+          </div>
+
+          <div class="team">
+            <div>
+              Operations Team
+              <div class="team-meta">4 members</div>
+            </div>
+            <div class="team-meta">→</div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- CREATE TEAM MODAL -->
+    <div class="modal" id="teamModal">
+      <div class="modal-box">
+        <h3>Create Team</h3>
+
+        <form method="POST" action="/app/createteam/">
+          {% csrf_token %}
+
+          <input type="text" name="name" placeholder="Team name" required />
+
+          <textarea name="description" placeholder="Description"></textarea>
+
+          <input
+            type="text"
+            name="members"
+            placeholder="Add members (comma separated)"
+          />
+
+          <div class="modal-actions">
+            <button type="button" class="btn secondary" onclick="closeModal()">
+              Cancel
+            </button>
+
+            <button type="submit" class="btn">Create</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function openModal() {
+        document.getElementById("teamModal").style.display = "flex";
+      }
+
+      function closeModal() {
+        document.getElementById("teamModal").style.display = "none";
+      }
+
+      /* User menu */
+      function toggleUserMenu() {
+        const menu = document.getElementById("userMenu");
+        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        menu.style.flexDirection = "column";
+      }
+
+      document.addEventListener("click", function (e) {
+        const menu = document.getElementById("userMenu");
+        const userCard = document.querySelector(".user-card");
+
+        if (!menu.contains(e.target) && !userCard.contains(e.target)) {
+          menu.style.display = "none";
+        }
+      });
+
+      function logoutUser() {
+        window.location.href = "/signout";
+      }
+    </script>
+  </body>
+</html>

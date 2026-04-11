@@ -1,23 +1,23 @@
-from applications.employeemanager.server.handlers.employeeHandler import employeeHandler
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render , redirect
-from .models import Employee
+from django.shortcuts import render, redirect
+from .models import Team
+
 
 @login_required
-def employeemanager(request):
+def teambase(request):
+    return render(request, "employeemanager/teambase.html")
+
+
+@login_required
+def create_team(request):
     if request.method == "POST":
-        Employee.objects.create(
-            firstname=request.POST.get("fname"),
-            lastname=request.POST.get("lname"),
-            role=request.POST.get("role"),
-            email=request.POST.get("email"),
+        name = request.POST.get("name")
+        description = request.POST.get("description")
+
+        Team.objects.create(
+            name=name,
+            description=description,
             submitted_by=request.user
         )
 
-    employees = Employee.objects.filter(submitted_by=request.user)
-
-    return render(request, "employeemanager/employeemanager.html", {
-    # return render(request, "employeemanager/team-todo.html", {
-        "title": "AvantKeel",
-        "employees": employees
-    })
+    return redirect("/")

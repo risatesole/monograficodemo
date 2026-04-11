@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import render
 from applications.core.views import home
-from applications.employeemanager.views import employeemanager
+from applications.employeemanager.views import teambase
 from applications.core.views import hello_world
 from server.views import hello_view
 
