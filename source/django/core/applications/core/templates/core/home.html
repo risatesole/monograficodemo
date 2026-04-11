@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{title}}</title>
+    <title>TeamBase</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     {% load static %}
     <link
       rel="stylesheet"
@@ -12,101 +16,38 @@
     />
   </head>
   <body>
-    <!-- Header -->
-    <header>
-      <div class="logo">{{title}}</div>
-      <nav>
-        <ul>
-          <li><a href="/signin">SignIn</a></li>
-          <li><a href="/signup">SignUp</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div class="container">
+      <header>
+        <div class="logo">TeamBase</div>
+        <nav>
+          <a href="#">How it Works</a>
+          <a href="#">About</a>
+          <a href="/app" class="btn">Open App</a>
+        </nav>
+      </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <h1>The tools for <span>THE BIG COMPANIES</span>.</h1>
-      <p>Compania concepto de desarrollo de software.</p>
-      <div class="buttons">
-        <a href="/signup" class="primary">Empezar a usar</a>
-        <a href="/about" class="secondary">Entender mas</a>
-      </div>
-    </section>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+      <section class="hero">
+        <div class="hero-text">
+          <h2>Internal Team Management</h2>
+          <h1>Organize your employees with structure</h1>
+          <p>
+            A simple system to manage roles, responsibilities, and internal team
+            data with clarity and consistency.
+          </p>
 
-    <!-- Footer -->
-    <footer>
-      <div class="footer-container">
-        <div class="footer-section">
-          <h4>Contactos</h4>
-          <ul>
-            <li><a href="#">Telefono</a></li>
-            <li><a href="#">Correo</a></li>
-            <li><a href="#">Locacion</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="#">Politicas de privacidad</a></li>
-            <li><a href="#">Terminos de servicio</a></li>
-            <li><a href="#">Codigo de conducta</a></li>
-            <li><a href="#">Etica</a></li>
-          </ul>
-        </div>
-        <div class="footer-logo">
-          <div>AvantKeel</div>
-          <div class="socials">
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">Instagram</a>
+          <div class="hero-buttons">
+            <a href="/app" class="btn">Launch App →</a>
+            <a href="#" class="btn-secondary">Learn more</a>
           </div>
-          <div>© 2026 AvantKeel. All rights reserved.</div>
         </div>
-      </div>
-    </footer>
+
+        <div>
+          <img
+            src="https://images.unsplash.com/photo-1556761175-4b46a572b786"
+            alt="Team working"
+          />
+        </div>
+      </section>
+    </div>
   </body>
 </html>
