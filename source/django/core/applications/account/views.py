@@ -6,36 +6,35 @@ from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from applications.account.server.handlers.signin import signinHandler
 
-# todo save tokens in the dbms
-TOKENS = {}
-
 def signup(request):
     if request.method == "POST":
-        full_name = request.POST.get("full_name")
+        firstname = request.POST.get("firstname")
+        lastname = request.POST.get("lastname")
         email = request.POST.get("email")
         password = request.POST.get("password")
 
-        if User.objects.filter(username=email).exists():
+        if User.objects.filter(email=email).exists():
             messages.error(request, "User with this email already exists.")
         else:
             user = User.objects.create_user(
-                username=email,
+                username=email,  # 👈 use email as username
                 email=email,
                 password=password,
-                first_name=full_name.split(" ")[0],
-                last_name=" ".join(full_name.split(" ")[1:]),
+                first_name=firstname,
+                last_name=lastname
             )
             messages.success(request, "Account created successfully!")
-            login(request, user) 
+            login(request, user)
             return redirect("/app/")
-    return render(request, 'signup_ES.html', {"title": "AvantKeel"})
+
+    return render(request, "signup_ES.html", {"title": "Teambase"})
+
 
 def signin(request):
     response = signinHandler(request)
     if response:
-            return response
-    return render(request, "signin_ES.html", {"title": "AvantKeel"})
-
+        return response
+    return render(request, "signin_ES.html", {"title": "Teambase"})
 
 @login_required
 def profile(request):
@@ -43,7 +42,6 @@ def profile(request):
         "user": request.user,
         "title": "Profile"
     })
-
 
 def signout(request):
     logout(request)

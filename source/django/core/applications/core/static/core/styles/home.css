@@ -3,7 +3,7 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: #ffffff; /* more serious like Avantkeel */
+    background: #ffffff;
     color: #1f2937;
 }
 
@@ -39,7 +39,6 @@ nav a:hover {
     color: #1f2937;
 }
 
-/* Buttons exactly like Avantkeel style */
 .btn {
     background: #1f2937;
     color: white;

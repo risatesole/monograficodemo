@@ -13,27 +13,15 @@
 
 Para probar la aplicacion Funcionando en linea [aga click aqui](https://silenteuclid.xyz/) o de forma local una vez configurado postgresql, las dependencias de python de el projecto y el archivo .env ir a http://localhost:8000/app/ 
 
-
-## Repositorio
-
-(monografico-tareas)[https://github.com/avantkeel/monograficodemo]
-
 ## Instrucciones para ejecutar projecto
 
-### 1. clonar el projecto
-
-```bash
-git clone git@github.com:avantkeel/monograficodemo.git
-cd tarea2
-```
-
-### 2. Crear un entorno virtual
+### Crear un entorno virtual
 
 ```bash
 python -m venv .venv
 ```
 
-### 2. Activar el entorno virtual
+### Activar el entorno virtual
 
 - **Windows (Git Bash / CMD / PowerShell):**
 
@@ -53,7 +41,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Verificar instalación
+### Verificar instalación
 
 ```bash
 pip freeze
@@ -68,7 +56,7 @@ sqlparse==0.5.5
 tzdata==2025.3
 ```
 
-## 5. Configurar postgres
+## Configurar postgres
 
 Configurar postgress y poner la configuracion de postgress en archivo env como el que esta como ejemplo en `source/django/core/.env.example`
 

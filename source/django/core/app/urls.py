@@ -8,8 +8,8 @@ from applications.core.views import hello_world
 from server.views import hello_view
 
 # django admin panel customization
-admin.site.site_header = "AvantKeel Monografico Admin Panel"
-admin.site.site_title = "AvantKeel"
+admin.site.site_header = "Monografico Admin Panel"
+admin.site.site_title = "Monografico"
 admin.site.index_title = "Admin panel"
 
 

@@ -9,7 +9,7 @@ def hello_world(request):
 
 def home(request):
     context = {
-        "title": "AvantKeel"
+        "title": "Teambase"
     }
     return render(request, 'core/home_ES.html', context)
 
