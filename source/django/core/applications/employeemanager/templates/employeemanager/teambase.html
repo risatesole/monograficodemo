@@ -35,9 +35,13 @@
 
       <!-- USER -->
       <div class="user-card" onclick="toggleUserMenu()">
-        <div class="avatar">H</div>
+        <div class="avatar">
+          {{ user.first_name }}
+        </div>
         <div>
-          <div class="user-name">Henry E. Ramirez</div>
+          <div class="user-name">
+            {{ user.get_full_name|default:user.username }}
+          </div>
           <div class="user-role">Team Member</div>
         </div>
       </div>
